@@ -26,11 +26,7 @@ const showDrawer = ref(false)
       <div>
         <slot name="title">
           <NuxtLink to="/" class="font-bold text-lg text-primary-500">
-            <Icon
-              name="simple-icons:nuxtdotjs"
-              class="font-black text-xl font-mono mr-2 inline-block"
-            />
-            <span class="capitalize">{{ awesome.name }}</span>
+            <span class="capitalize">logo</span>
           </NuxtLink>
         </slot>
       </div>
@@ -45,21 +41,6 @@ const showDrawer = ref(false)
           <template v-for="(item, i) in menus" :key="i">
             <LayoutPageNavbarMenuWrapper :menu="item" />
           </template>
-        </div>
-        <!-- others -->
-        <div class="pl-4 flex space-x-3 text-xl">
-          <!-- todo: feat/localization -->
-          <!-- <AwesomeLink class="text-gray-400 hover:text-gray-100">
-            <Icon name="la:language" />
-          </AwesomeLink> -->
-          <LayoutPageNavbarDropdownThemeSwitcher />
-          <AwesomeLink
-            v-if="awesome?.project?.links?.github"
-            class="dark:text-gray-400 text-gray-600"
-            :href="awesome?.project?.links?.github"
-          >
-            <Icon name="mdi:github-face" />
-          </AwesomeLink>
         </div>
       </div>
       <!-- drawer:btn -->
@@ -130,9 +111,7 @@ const showDrawer = ref(false)
                         open ? 'font-bold' : '',
                       ]"
                     >
-                      <span>{{
-                        parseMenuTitle(item?.title)
-                      }}</span>
+                      <span>{{ parseMenuTitle(item?.title) }}</span>
                       <Icon
                         name="carbon:chevron-right"
                         class="ml-1"
@@ -167,9 +146,7 @@ const showDrawer = ref(false)
                                   ? 'text-gray-900 dark:text-gray-100 font-bold'
                                   : 'text-gray-700 dark:text-gray-300',
                               ]"
-                              >{{
-                                parseMenuTitle(child?.title)
-                              }}</span
+                              >{{ parseMenuTitle(child?.title) }}</span
                             >
                           </NuxtLink>
                         </template>
@@ -181,23 +158,23 @@ const showDrawer = ref(false)
             </template>
           </div>
         </AwesomeActionSheetItem>
-        <AwesomeActionSheetItem class="flex flex-col">
+        <!-- <AwesomeActionSheetItem class="flex flex-col">
           <div class="pb-2">
             <div class="mt-2 mb-2 text-sm font-bold capitalize">
               Change Theme
             </div>
             <LayoutPageNavbarDropdownThemeSwitcher type="select-box" />
           </div>
-        </AwesomeActionSheetItem>
+        </AwesomeActionSheetItem> -->
       </AwesomeActionSheetGroup>
-      <AwesomeActionSheetGroup>
+      <!-- <AwesomeActionSheetGroup>
         <AwesomeActionSheetItemButton
           class="flex justify-center items-center text-base space-x-2"
         >
           <Icon name="mdi:github-face" class="text-lg font-bold" />
           <span class="text-sm">Github</span>
         </AwesomeActionSheetItemButton>
-      </AwesomeActionSheetGroup>
+      </AwesomeActionSheetGroup> -->
     </AwesomeActionSheet>
   </header>
 </template>

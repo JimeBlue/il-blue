@@ -15,20 +15,7 @@ export default defineAppConfig({
         navbar: {
           menus: [
             { type: 'link', title: 'Blank', to: { name: 'blank' } },
-            { type: 'link', title: 'Post', to: { name: 'post' } },
-            { type: 'link', title: 'Test', to: { name: 'test' } },
-            {
-              type: 'dropdown',
-              title: 'Documentations',
-              children: [
-                {
-                  type: 'link',
-                  title: 'Components',
-                  to: { name: 'docs-components' },
-                },
-              ],
-            },
-            { type: 'button', title: 'Setting', to: { name: 'setting' } },
+
             // dynamic title
             // {
             //   type: 'button',
